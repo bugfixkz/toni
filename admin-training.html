@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="/assets/libs/fancybox/dist/jquery.fancybox.min.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="/assets/libs/slick-carousel/slick/slick.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="http://localhost:9876/assets/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://localhost:9876/assets/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://localhost:9876/assets/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://localhost:9876/assets/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://localhost:9876/assets/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://localhost:9876/assets/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://localhost:9876/assets/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://localhost:9876/assets/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:9876/assets/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="http://localhost:9876/assets/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:9876/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:9876/assets/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:9876/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="http://localhost:9876/assets/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="http://localhost:9876/assets/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="title" content="Заголовок">
+    <meta name="description" content="Описание">
+    <meta name="keywords" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Заголовок">
+    <meta property="og:description" content="Описание">
+    <meta property="og:url" content="http://localhost:9876/">
+    <meta property="og:image" content="http://localhost:9876/assets/og-image.jpg">
+    <meta property="og:site_name" content="localhost:9876">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Заголовок">
+    <meta property="twitter:description" content="Описание">
+    <meta property="twitter:image" content="http://localhost:9876/assets/og-image.jpg">
+    <meta property="twitter:site" content="">
+    <meta property="twitter:creator" content="">
+    <meta property="twitter:url" content="http://localhost:9876/">
+    <meta property="author" content="">
+    <meta name="relap-image" content="http://localhost:9876/assets/og-image.jpg">
+    <meta name="relap-title" content="Заголовок">
+    <meta name="relap-description" content=" ">
+    <style>
+        /* Absolute Center Spinner */
+        .loading {
+        position: fixed;
+        z-index: 999;
+        height: 2em;
+        width: 2em;
+        overflow: show;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        }
+
+        /* Transparent Overlay */
+        .loading:before {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+            background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
+
+        background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+        }
+
+        /* :not(:required) hides these rules from IE9 and below */
+        .loading:not(:required) {
+        /* hide "loading..." text */
+        font: 0/0 a;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0;
+        }
+
+        .loading:not(:required):after {
+        content: '';
+        display: block;
+        font-size: 10px;
+        width: 1em;
+        height: 1em;
+        margin-top: -0.5em;
+        -webkit-animation: spinner 1500ms infinite linear;
+        -moz-animation: spinner 1500ms infinite linear;
+        -ms-animation: spinner 1500ms infinite linear;
+        -o-animation: spinner 1500ms infinite linear;
+        animation: spinner 1500ms infinite linear;
+        border-radius: 0.5em;
+        -webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+        box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+        }
+
+        /* Animation */
+
+        @-webkit-keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        }
+        @-moz-keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        }
+        @-o-keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        }
+        @keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        }
+    </style>
+</head>
+<body>
+        <div id='loader' class="loading" style="display: none">Loading&#8230;</div>
+
+<div class="main">
+        <header class="compensate-for-scrollbar">
+                <div class="container">
+                    <div class="row">
+                        <a href="/" class="logo" title="Главная">
+                            <img src="/assets/img/logo.png" alt="">
+                            <img src="/assets/img/logo-white.png" alt="">
+                        </a>
+                        <nav>
+                            <a href="/admin-price.html" title="Услуги и цены">Админ Услуги и цены</a>
+                            <a href="/admin-training.html" title="Обучение">Админ Обучение</a>
+                        </nav>
+                        <a class="tel" href="tel:+7 (7172) 72-92-92">+7 (7172) 72-92-92</a>
+                    </div>
+                </div>
+            </header>
+
+    <main>
+
+<section class="training" data-aos="fade-up" data-aos-delay="50">
+    <div class="container">
+        <ul class="breadcrumbs">
+            <li><a href="#" title="Главная">Главная</a></li>
+            <li><span>Обучение</span></li>
+        </ul>
+        <h1 class="title-primary">Обучение</h1>
+        <div class="row">
+            <div class="col training__left">
+                <img id='t1i' class="training__image" src="" alt="">
+                <input type="file" class="file-select" accept="image/*" />
+                <a id='1' href="#" class="btn btn--small file-submit">Добавить</a>
+            </div>
+            <div class="col training__right">
+                <div class="plain-text">
+                    <textarea id="t1t" cols='60' rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col training__left">
+                    <img id='t2i' class="training__image" src="" alt="">
+                    <input type="file" class="file-select" accept="image/*" />
+                    <a id='2' href="#" class="btn btn--small file-submit">Добавить</a>
+                </div>
+                <div class="col training__right">
+                    <div class="plain-text">
+                        <textarea id="t2t" cols='60' rows="10"></textarea>
+                    </div>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col training__left">
+                    <img id='t3i' class="training__image" src="" alt="">
+                    <input type="file" class="file-select" accept="image/*" />
+                    <a id='3' href="#" class="btn btn--small file-submit">Добавить</a>
+                </div>
+                <div class="col training__right">
+                    <div class="plain-text">
+                        <textarea id="t3t" cols='60' rows="10"></textarea>
+                    </div>
+        </div>
+    </div>
+    <a href="#" onclick="updateData();" title="Сохранить" class="btn btn--small">Сохранить</a>
+    </div>
+</section>
+
+    </main>
+    </div>
+
+    <script src="/assets/libs/jquery/dist/jquery.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    <script src="/assets/js/send.js"></script>
+    <script src="/assets/libs/maskedinput/maskedinput.js"></script>
+    <script src="/assets/libs/fancybox/dist/jquery.fancybox.min.js"></script>
+    <script src="/assets/libs/slick-carousel/slick/slick.js"></script>
+    <script src="/assets/libs/object-fit-images/dist/ofi.browser.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://matthewelsom.com/assets/js/libs/instafeed.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script>
+        var items = document.querySelectorAll('.file-select');
+        var items2 = document.querySelectorAll('.file-submit');
+        items.forEach(element => {
+            element.addEventListener('change', handleFileUploadChange);
+        });
+        items2.forEach(element => {
+            element.addEventListener('click', handleFileUploadSubmit);
+        });
+        let selectedFile;
+        var config = {
+            apiKey: "AIzaSyBKKyDJOQ7H0EhV37SIxedQFViy2umECdA",
+            authDomain: "tonyguy-cf069.firebaseapp.com",
+            databaseURL: "https://tonyguy-cf069.firebaseio.com",
+            projectId: "tonyguy-cf069",
+            storageBucket: "tonyguy-cf069.appspot.com",
+            messagingSenderId: "770261759588"
+        };
+        firebase.initializeApp(config);
+        const storageService = firebase.storage();
+        const storageRef = storageService.ref();
+
+        function handleFileUploadChange(e) {
+            selectedFile = e.target.files[0];
+        }
+
+        function handleFileUploadSubmit(e) {
+            document.getElementById('loader').setAttribute('style', '');
+            const uploadTask = storageRef.child(`images/${getRandomInt(0, 100) +selectedFile.name}`).put(selectedFile);
+            uploadTask.on('state_changed', (snapshot) => {
+            }, (error) => {
+                alert('Error upload image');
+            }, () => {
+                // Do something once upload is complete
+                alert("Изображение загружено");
+                document.getElementById('loader').setAttribute('style', 'display: none');
+                var imageDoc =  document.getElementById('t' + e.target.id + 'i');
+                uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                    imageDoc.setAttribute('src', downloadURL);
+                });
+            });
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getTrainData(){
+            var db = firebase.firestore();
+            db.collection("training")
+                .get()
+                .then(function(querySnapshot) {
+                    querySnapshot.forEach(function(doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        var imgById = document.getElementById(doc.id + 'i');
+                        if(imgById != undefined){
+                            imgById.setAttribute('src', doc.data().image);
+                        }
+                        var txtById = document.getElementById(doc.id + 't');
+                        if(txtById != undefined){
+                            txtById.innerText = doc.data().text;
+                        }
+                    });
+                })
+                .catch(function(error) {
+                    alert("Error getting documents");
+                });
+        }
+
+        getTrainData();
+
+
+        function updateData(){
+            var password = prompt("Введите пароль", "");
+            if(password === null || password === ''){
+                return;
+            }
+            signIn('qoqysmail@gmail.com', password);
+        }
+
+        function signIn(email, password){
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then(function(){
+                    updateDateFB();
+                })
+                .catch(function(err){
+                    alert("Error password");
+                })
+        }
+
+        function updateDateFB(){
+            document.getElementById('loader').setAttribute('style', '');
+            var db = firebase.firestore();
+                db.collection("training")
+                    .get()
+                    .then(function(querySnapshot) {
+                        querySnapshot.forEach(function(doc) {
+                            // doc.data() is never undefined for query doc snapshots
+                            var imgById = document.getElementById(doc.id + 'i');
+                            if(imgById != undefined){
+                                db.collection('training').doc(doc.id).update({image: imgById.getAttribute('src')});
+                            }
+                            var txtById = document.getElementById(doc.id + 't');
+                            if(txtById != undefined){
+                                db.collection('training').doc(doc.id).update({text: txtById.value});
+                            }
+                        });
+                        document.getElementById('loader').setAttribute('style', 'display: none');
+                        alert('Данные обновлены');
+                    })
+                    .catch(function(error) {
+                        alert("Error getting documents");
+                    });
+        }
+    </script>
+</body>
+</html>

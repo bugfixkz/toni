@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="/assets/libs/fancybox/dist/jquery.fancybox.min.css" type="text/css" media="screen"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="http://localhost:9876/assets/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://localhost:9876/assets/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://localhost:9876/assets/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://localhost:9876/assets/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://localhost:9876/assets/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://localhost:9876/assets/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://localhost:9876/assets/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://localhost:9876/assets/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:9876/assets/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="http://localhost:9876/assets/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:9876/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:9876/assets/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:9876/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="http://localhost:9876/assets/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="http://localhost:9876/assets/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="title" content="Заголовок">
+    <meta name="description" content="Описание">
+    <meta name="keywords" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Заголовок">
+    <meta property="og:description" content="Описание">
+    <meta property="og:url" content="http://localhost:9876/">
+    <meta property="og:image" content="http://localhost:9876/assets/og-image.jpg">
+    <meta property="og:site_name" content="localhost:9876">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Заголовок">
+    <meta property="twitter:description" content="Описание">
+    <meta property="twitter:image" content="http://localhost:9876/assets/og-image.jpg">
+    <meta property="twitter:site" content="">
+    <meta property="twitter:creator" content="">
+    <meta property="twitter:url" content="http://localhost:9876/">
+    <meta property="author" content="">
+    <meta name="relap-image" content="http://localhost:9876/assets/og-image.jpg">
+    <meta name="relap-title" content="Заголовок">
+    <meta name="relap-description" content=" ">
+    <style>
+            /* Absolute Center Spinner */
+            .loading {
+            position: fixed;
+            z-index: 999;
+            height: 2em;
+            width: 2em;
+            overflow: show;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            }
+    
+            /* Transparent Overlay */
+            .loading:before {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+                background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
+    
+            background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+            }
+    
+            /* :not(:required) hides these rules from IE9 and below */
+            .loading:not(:required) {
+            /* hide "loading..." text */
+            font: 0/0 a;
+            color: transparent;
+            text-shadow: none;
+            background-color: transparent;
+            border: 0;
+            }
+    
+            .loading:not(:required):after {
+            content: '';
+            display: block;
+            font-size: 10px;
+            width: 1em;
+            height: 1em;
+            margin-top: -0.5em;
+            -webkit-animation: spinner 1500ms infinite linear;
+            -moz-animation: spinner 1500ms infinite linear;
+            -ms-animation: spinner 1500ms infinite linear;
+            -o-animation: spinner 1500ms infinite linear;
+            animation: spinner 1500ms infinite linear;
+            border-radius: 0.5em;
+            -webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+            box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+            }
+    
+            /* Animation */
+    
+            @-webkit-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+            }
+            @-moz-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+            }
+            @-o-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+            }
+            @keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+            }
+        </style>
+</head>
+<body>
+        <div id='loader' class="loading" style="display: none">Loading&#8230;</div>
+
+<div class="main">
+        <header class="compensate-for-scrollbar">
+                <div class="container">
+                    <div class="row">
+                        <a href="/" class="logo" title="Главная">
+                            <img src="/assets/img/logo.png" alt="">
+                            <img src="/assets/img/logo-white.png" alt="">
+                        </a>
+                        <nav>
+                            <a href="/admin-price.html" title="Услуги и цены">Админ Услуги и цены</a>
+                            <a href="/admin-training.html" title="Обучение">Админ Обучение</a>
+                        </nav>
+                        <a class="tel" href="tel:+7 (7172) 72-92-92">+7 (7172) 72-92-92</a>
+                    </div>
+                </div>
+            </header>
+    
+
+    <main>
+
+<section data-aos="fade-up" data-aos-delay="50">
+    <div class="container">
+        
+        <div class="white-block">
+            <div class="title-block">
+                <h1 class="title-primary">Услуги и цены</h1>
+                <!--<div class="title-block__links">-->
+                    <!--<a href="#" title="Услуги" class="active">Услуги</a>-->
+                    <!--<a href="#" title="Образы">Образы</a>-->
+                <!--</div>-->
+            </div>
+            <div class="spoilers services-spoilers">
+                <div class="spoiler active">
+                    <div class="spoiler__title">Hair</div>
+                    <div class="spoiler__desc" style="display: block">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>Услуга</td>
+                                <td>Junior stylist</td>
+                                <td>Stylist</td>
+                                <td>Top stylist</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Создаем ФОРМУ: стрижки</td>
+                                <td><input id='h1j' value="" /></td>
+                                <td><input id='h1s' value="" /></td>
+                                <td><input id='h1t' value="" /></td>
+                            </tr>
+                            <tr>
+                                <td>Создаем ЦВЕТ: окрашивание</td>
+                                <td><input id='h2j' value="" /></td>
+                                <td><input id='h2s' value="" /></td>
+                                <td><input id='h2t' value="" /></td>
+                            </tr>
+                            <tr>
+                                <td>Уход за волосами и кожей головы: лечебные процедуры</td>
+                                <td><input id='h3j' value="" /></td>
+                                <td><input id='h3s' value="" /></td>
+                                <td><input id='h3t' value="" /></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="spoiler">
+                    <div class="spoiler__title">Nail</div>
+                    <div class="spoiler__desc">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>Услуга</td>
+                                <td>Junior Nail stylist</td>
+                                <td>Nail Stylist</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Маникюр</td>
+                                <td><input id='n1j' value="" /></td>
+                                <td><input id='n1n' value="" /></td>
+                            </tr>
+                            <tr>
+                                <td>Педикюр</td>
+                                <td><input id='n2j' value="" /></td>
+                                <td><input id='n2n' value="" /></td>
+                            </tr>
+                            <tr>
+                                <td>Уход (спа для рук и ног) и лечение (подология) </td>
+                                <td><input id='n3j' value="" /></td>
+                                <td><input id='n3n' value="" /></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="spoiler">
+                    <div class="spoiler__title">Cosmetology</div>
+                    <div class="spoiler__desc">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>Услуга</td>
+                                <td>Врач - косметолог</td>
+                                <td>Косметолог - эстетист</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    Эстетическая (классическая) косметология
+                                </td>
+                                <td><input id='c1v' value="" /></td>
+                                <td><input id='c1k' value='' /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Инъекций (Мезотерапия, Биоревитализация, Контурная пластика)
+                                </td>
+                                <td><input id='c2v' value="" /></td>
+                                <td><input id='c2k' value="" /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Массаж (лицо и тело)
+                                </td>
+                                <td><input id='c3v' value="" /></td>
+                                <td><input id='c3k' value="" /></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="spoiler">
+                    <div class="spoiler__title">Make Up</div>
+                    <div class="spoiler__desc">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>Услуга</td>
+                                <td>Junior Make up Artist</td>
+                                <td>Make up Artist</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Визаж (дневной, вечерний)</td>
+                                <td><input id='m1j' value="" /></td>
+                                <td><input id='m1m' value="" /></td>
+                            </tr>
+                            <tr>
+                                <td>Аэровизаж </td>
+                                <td><input id='m2j' value="" /></td>
+                                <td><input id='m2m' value="" /></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a href="#" onclick="updateData();" title="Сохранить" class="btn btn--small">Сохранить</a>
+    </div>
+</section>
+
+    </main>
+    </div>
+
+    <script src="/assets/libs/jquery/dist/jquery.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    
+    
+    <script src="/assets/libs/fancybox/dist/jquery.fancybox.min.js"></script>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBKKyDJOQ7H0EhV37SIxedQFViy2umECdA",
+            authDomain: "tonyguy-cf069.firebaseapp.com",
+            databaseURL: "https://tonyguy-cf069.firebaseio.com",
+            projectId: "tonyguy-cf069",
+            storageBucket: "tonyguy-cf069.appspot.com",
+            messagingSenderId: "770261759588"
+        };
+        firebase.initializeApp(config);
+
+        function getDb(){
+            var db = firebase.firestore();
+            db.collection("price")
+                .get()
+                .then(function(querySnapshot) {
+                    querySnapshot.forEach(function(doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        var docById = document.getElementById(doc.id);
+                        if(docById != undefined){
+                            docById.value = doc.data().price;
+                        }
+                    });
+                })
+                .catch(function(error) {
+                    alert("Error getting documents");
+                });
+        }
+
+        getDb();
+
+        function updateData(){
+            var password = prompt("Введите пароль", "");
+            if(password === null || password === ''){
+                return;
+            }
+            signIn('qoqysmail@gmail.com', password);
+        }
+        function updateDateFB(){
+            document.getElementById('loader').setAttribute('style', '');
+            var db = firebase.firestore();
+                db.collection("price")
+                    .get()
+                    .then(function(querySnapshot) {
+                        querySnapshot.forEach(function(doc) {
+                            // doc.data() is never undefined for query doc snapshots
+                            var docById = document.getElementById(doc.id);
+                            if(docById != undefined){
+                                db.collection('price').doc(doc.id).update({price: docById.value});
+                            }
+                        });
+                        document.getElementById('loader').setAttribute('style', 'display:none');
+                        alert('Данные обновлены');
+                    })
+                    .catch(function(error) {
+                        alert("Error getting documents");
+                    });
+        }
+
+        function signIn(email, password){
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then(function(){
+                    updateDateFB();
+                })
+                .catch(function(err){
+                    alert("Error password");
+                })
+        }
+    </script>
+</body>
+</html>

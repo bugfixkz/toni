@@ -290,5 +290,39 @@
     <script src="/assets/libs/object-fit-images/dist/ofi.browser.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://matthewelsom.com/assets/js/libs/instafeed.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBKKyDJOQ7H0EhV37SIxedQFViy2umECdA",
+            authDomain: "tonyguy-cf069.firebaseapp.com",
+            databaseURL: "https://tonyguy-cf069.firebaseio.com",
+            projectId: "tonyguy-cf069",
+            storageBucket: "tonyguy-cf069.appspot.com",
+            messagingSenderId: "770261759588"
+        };
+        firebase.initializeApp(config);
+
+        function getDb(){
+            var db = firebase.firestore();
+            db.collection("price")
+                .get()
+                .then(function(querySnapshot) {
+                    querySnapshot.forEach(function(doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        var docById = document.getElementById(doc.id);
+                        if(docById != undefined){
+                            docById.value = doc.data().price;
+                            docById.innerHTML = doc.data().price;
+                        }
+                    });
+                })
+                .catch(function(error) {
+                    alert("Error getting documents");
+                });
+        }
+
+        getDb();
+    </script>
 </body>
 </html>

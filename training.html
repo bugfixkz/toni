@@ -88,36 +88,36 @@
             <li><span>Обучение</span></li>
         </ul>
         <h1 class="title-primary">Обучение</h1>
-        <div class="row training">
+        <div id='t1' style="display: none" class="row training">
             <div class="col training__left">
-                <img class="training__image" src="/assets/img/400x400.png" alt="">
+                <img id='t1i' class="training__image" src="" alt="">
                 <a href="#" class="btn btn--small">Записаться</a>
             </div>
             <div class="col training__right">
                 <div class="plain-text">
-                    <p>Культовый образ, на первый взгляд, неизменяем. Эстетика, так или иначе, начинает маньеризм. Героический миф выстраивает романтизм, именно об этом комплексе движущих сил писал З.Фрейд в теории сублимации. Хтонический миф, следовательно, монотонно образует художественный идеал. Шиллер утверждал: онтологический статус искусства имеет самодостаточный базовый тип личности.</p>
+                    <p id='t1t'></p>
                 </div>
             </div>
         </div>
-        <div class="row training">
+        <div id='t2' style="display: none" class="row training">
             <div class="col training__left">
-                <img class="training__image" src="/assets/img/400x400.png" alt="">
+                <img id='t2i' class="training__image" src="" alt="">
                 <a href="#" class="btn btn--small">Записаться</a>
             </div>
             <div class="col training__right">
                 <div class="plain-text">
-                    <p>Культовый образ, на первый взгляд, неизменяем. Эстетика, так или иначе, начинает маньеризм. Героический миф выстраивает романтизм, именно об этом комплексе движущих сил писал З.Фрейд в теории сублимации. Хтонический миф, следовательно, монотонно образует художественный идеал. Шиллер утверждал: онтологический статус искусства имеет самодостаточный базовый тип личности.</p>
+                    <p id='t2t'></p>
                 </div>
             </div>
         </div>
-        <div class="row training">
+        <div id='t3' style="display: none" class="row training">
             <div class="col training__left">
-                <img class="training__image" src="/assets/img/400x400.png" alt="">
+                <img id='t3i' class="training__image" src="" alt="">
                 <a href="#" class="btn btn--small">Записаться</a>
             </div>
             <div class="col training__right">
                 <div class="plain-text">
-                    <p>Культовый образ, на первый взгляд, неизменяем. Эстетика, так или иначе, начинает маньеризм. Героический миф выстраивает романтизм, именно об этом комплексе движущих сил писал З.Фрейд в теории сублимации. Хтонический миф, следовательно, монотонно образует художественный идеал. Шиллер утверждал: онтологический статус искусства имеет самодостаточный базовый тип личности.</p>
+                    <p id='t3t'></p>
                 </div>
             </div>
         </div>
@@ -181,5 +181,45 @@
     <script src="/assets/libs/object-fit-images/dist/ofi.browser.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://matthewelsom.com/assets/js/libs/instafeed.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBKKyDJOQ7H0EhV37SIxedQFViy2umECdA",
+            authDomain: "tonyguy-cf069.firebaseapp.com",
+            databaseURL: "https://tonyguy-cf069.firebaseio.com",
+            projectId: "tonyguy-cf069",
+            storageBucket: "tonyguy-cf069.appspot.com",
+            messagingSenderId: "770261759588"
+        };
+        firebase.initializeApp(config);
+
+        function getTrainData(){
+            var db = firebase.firestore();
+            db.collection("training")
+                .get()
+                .then(function(querySnapshot) {
+                    querySnapshot.forEach(function(doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        if(doc.data().text != ''){
+                            var imgById = document.getElementById(doc.id + 'i');
+                            if(imgById != undefined){
+                                imgById.setAttribute('src', doc.data().image);
+                            }
+                            var txtById = document.getElementById(doc.id + 't');
+                            if(txtById != undefined){
+                                txtById.innerText = doc.data().text;
+                            }
+                            document.getElementById(doc.id).setAttribute('style', '');
+                        }
+                    });
+                })
+                .catch(function(error) {
+                    alert("Error getting documents");
+                });
+        }
+
+        getTrainData();
+    </script>
 </body>
 </html>

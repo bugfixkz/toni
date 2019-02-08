@@ -25,6 +25,7 @@
     position: relative;
     width: auto;
     margin: 10px;
+    transform: translateY(+200%);
 }
 @media (min-width: 576px) {
   .modal-dialog {

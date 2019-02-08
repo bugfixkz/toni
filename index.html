@@ -348,11 +348,25 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h3 class="modal-title">Название</h3>
+              <h3 class="modal-title">Записаться</h3>
               <a href="#close" title="Close" class="close">×</a>
             </div>
-            <div class="modal-body">    
-              <p>Содержимое модального окна...</p>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="username"><strong>Ваше имя:</strong></label>
+                    <br>
+                    <input id="username" style="width: 100%" name="username" type="text"  />
+                    <br>
+                    <br>
+                    <label for="userphone"><strong>Ваш телефон:</strong></label>
+                    <br>
+                    <input id="userphone" style="width: 100%" name="userphone" type="tel" />
+                    <br>
+                    <br>
+                    <div style="text-align: center">
+                        <a href="#" onclick="validate();" class="btn btn--small">Отправить</a>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
@@ -370,5 +384,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
     <script src="./getdatafb.js"></script>
     <script type="text/javascript" src="https://w69967.yclients.com/widgetJS" charset="UTF-8"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./sendmail.js"></script>
 </body>
 </html>

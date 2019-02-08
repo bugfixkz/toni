@@ -323,33 +323,9 @@
         </div>
     </footer>
     </div>
-    <div id="openModal" class="modal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h3 class="modal-title">Записаться</h3>
-                  <a href="#close" title="Close" class="close">×</a>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="username"><strong>Ваше имя:</strong></label>
-                        <br>
-                        <input id="username" style="width: 100%" name="username" type="text"  />
-                        <br>
-                        <br>
-                        <label for="userphone"><strong>Ваш телефон:</strong></label>
-                        <br>
-                        <input id="userphone" style="width: 100%" name="userphone" type="tel" />
-                        <br>
-                        <br>
-                        <div style="text-align: center">
-                            <a href="#" onclick="validate();" class="btn btn--small">Отправить</a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div id="masterModal">
+
+    </div>
     <script src="/assets/libs/jquery/dist/jquery.js"></script>
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/send.js"></script>
@@ -365,5 +341,10 @@
     <script type="text/javascript" src="https://w69967.yclients.com/widgetJS" charset="UTF-8"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./sendmail.js"></script>
+    <script>
+            $(document).ready(function(){
+                $("#masterModal").load('masterModal.html');
+            })
+        </script>
 </body>
 </html>

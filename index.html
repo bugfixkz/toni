@@ -344,20 +344,10 @@
         </div>
     </footer>
     </div>
-    <div id="openModal" class="modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title">Название</h3>
-              <a href="#close" title="Close" class="close">×</a>
-            </div>
-            <div class="modal-body">    
-              <p>Содержимое модального окна...</p>
-               
-            </div>
-          </div>
-        </div>
-      </div>
+    <div id="masterModal">
+
+    </div>
+    
     <script src="/assets/libs/jquery/dist/jquery.js"></script>
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/send.js"></script>
@@ -371,5 +361,12 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
     <script src="./getdatafb.js"></script>
     <script type="text/javascript" src="https://w69967.yclients.com/widgetJS" charset="UTF-8"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./sendmail.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#masterModal").load('masterModal.html');
+        })
+    </script>
 </body>
 </html>

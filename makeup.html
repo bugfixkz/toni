@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/assets/libs/fancybox/dist/jquery.fancybox.min.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/assets/libs/slick-carousel/slick/slick.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/css/modal.css" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
@@ -111,7 +112,7 @@
                         <a href="#" title="#Популярное">#Популярное</a>
                     </div>
                     <div>
-                        <a href="#" title="Записаться" class="btn">Записаться</a>
+                        <a href="#openModal" title="Записаться" class="btn">Записаться</a>
                     </div>
                 </div>
             </div>
@@ -213,7 +214,7 @@
 
         </div>
 
-        <a href="#" title="Записаться" class="btn btn--small">Записаться</a>
+        <a href="#openModal" title="Записаться" class="btn btn--small">Записаться</a>
     </div>
 </section>
 
@@ -302,7 +303,10 @@
         </div>
     </footer>
     </div>
+    <div id="masterModal">
 
+    </div>
+    
     <script src="/assets/libs/jquery/dist/jquery.js"></script>
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/send.js"></script>
@@ -316,5 +320,12 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
     <script src="./getdatafb.js"></script>
     <script type="text/javascript" src="https://w69967.yclients.com/widgetJS" charset="UTF-8"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./sendmail.js"></script>
+    <script>
+            $(document).ready(function(){
+                $("#masterModal").load('masterModal.html');
+            })
+        </script>
 </body>
 </html>

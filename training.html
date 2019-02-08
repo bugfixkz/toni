@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/assets/libs/fancybox/dist/jquery.fancybox.min.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/assets/libs/slick-carousel/slick/slick.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/css/modal.css" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
@@ -91,7 +92,7 @@
         <div id='t1' style="display: none" class="row training">
             <div class="col training__left">
                 <img id='t1i' class="training__image" src="" alt="">
-                <a href="#" class="btn btn--small">Записаться</a>
+                <a href="#openModal" class="btn btn--small">Записаться</a>
             </div>
             <div class="col training__right">
                 <div class="plain-text">
@@ -102,7 +103,7 @@
         <div id='t2' style="display: none" class="row training">
             <div class="col training__left">
                 <img id='t2i' class="training__image" src="" alt="">
-                <a href="#" class="btn btn--small">Записаться</a>
+                <a href="#openModal" class="btn btn--small">Записаться</a>
             </div>
             <div class="col training__right">
                 <div class="plain-text">
@@ -113,7 +114,7 @@
         <div id='t3' style="display: none" class="row training">
             <div class="col training__left">
                 <img id='t3i' class="training__image" src="" alt="">
-                <a href="#" class="btn btn--small">Записаться</a>
+                <a href="#openModal" class="btn btn--small">Записаться</a>
             </div>
             <div class="col training__right">
                 <div class="plain-text">
@@ -172,6 +173,33 @@
     </footer>
     </div>
 
+    <div id="openModal" class="modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title">Записаться</h3>
+                  <a href="#close" title="Close" class="close">×</a>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="username"><strong>Ваше имя:</strong></label>
+                        <br>
+                        <input id="username" style="width: 100%" name="username" type="text"  />
+                        <br>
+                        <br>
+                        <label for="userphone"><strong>Ваш телефон:</strong></label>
+                        <br>
+                        <input id="userphone" style="width: 100%" name="userphone" type="tel" />
+                        <br>
+                        <br>
+                        <div style="text-align: center">
+                            <a href="#" onclick="validateTrain();" class="btn btn--small">Отправить</a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
     <script src="/assets/libs/jquery/dist/jquery.js"></script>
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/send.js"></script>
@@ -222,5 +250,7 @@
         getTrainData();
     </script>
     <script type="text/javascript" src="https://w69967.yclients.com/widgetJS" charset="UTF-8"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./sendmail.js"></script>
 </body>
 </html>

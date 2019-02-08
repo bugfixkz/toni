@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/assets/libs/fancybox/dist/jquery.fancybox.min.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/assets/libs/slick-carousel/slick/slick.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/css/modal.css" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
@@ -89,7 +90,7 @@
             <div class="col">
                 <div class="opening__form">
                     <div class="text-center">
-                        <a href="#" class="btn" title="">Записаться</a>
+                        <a href="#openModal" class="btn" title="">Записаться</a>
                         <a href="#" class="btn-underline" title="">Бесплатно подобрать образ</a>
                     </div>
                     <div class="text">
@@ -343,7 +344,19 @@
         </div>
     </footer>
     </div>
-
+    <div id="openModal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Название</h3>
+              <a href="#close" title="Close" class="close">×</a>
+            </div>
+            <div class="modal-body">    
+              <p>Содержимое модального окна...</p>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="/assets/libs/jquery/dist/jquery.js"></script>
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/send.js"></script>

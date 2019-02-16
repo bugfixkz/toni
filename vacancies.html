@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/assets/libs/fancybox/dist/jquery.fancybox.min.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/assets/libs/slick-carousel/slick/slick.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/css/modal.css" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
@@ -81,18 +82,71 @@
 
     <main>
 
-<section data-aos="fade-up" data-aos-delay="50">
-    <div class="container">
-        <ul class="breadcrumbs">
-            <li><a href="#" title="Главная">Главная</a></li>
-            <li><span>Вакансии</span></li>
-        </ul>
-        <h1 class="title-primary">Вакансии</h1>
-        <div class="plain-text">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        </div>
-    </div>
-</section>
+        <section class="training-section" data-aos="fade-up" data-aos-delay="50">
+            <div class="container">
+                <ul class="breadcrumbs">
+                    <li><a href="#" title="Главная">Главная</a></li>
+                    <li><span>Вакансии</span></li>
+                </ul>
+                <h1 class="title-primary">Вакансии</h1>
+                <div id='v1' style="display: none" class="row training">
+                    <div class="col training__left">
+                        <img id='v1i' class="training__image" src="" alt="">
+                        <a href="#openModal" class="btn btn--small">Записаться</a>
+                    </div>
+                    <div class="col training__right">
+                        <div class="plain-text">
+                            <p id='v1t'></p>
+                        </div>
+                    </div>
+                </div>
+                <div id='v2' style="display: none" class="row training">
+                    <div class="col training__left">
+                        <img id='v2i' class="training__image" src="" alt="">
+                        <a href="#openModal" class="btn btn--small">Записаться</a>
+                    </div>
+                    <div class="col training__right">
+                        <div class="plain-text">
+                            <p id='v2t'></p>
+                        </div>
+                    </div>
+                </div>
+                <div id='v3' style="display: none" class="row training">
+                    <div class="col training__left">
+                        <img id='v3i' class="training__image" src="" alt="">
+                        <a href="#openModal" class="btn btn--small">Записаться</a>
+                    </div>
+                    <div class="col training__right">
+                        <div class="plain-text">
+                            <p id='v3t'></p>
+                        </div>
+                    </div>
+                </div>
+                <div id='v4' style="display: none" class="row training">
+                    <div class="col training__left">
+                        <img id='v4i' class="training__image" src="" alt="">
+                        <a href="#openModal" class="btn btn--small">Записаться</a>
+                    </div>
+                    <div class="col training__right">
+                        <div class="plain-text">
+                            <p id='v4t'></p>
+                        </div>
+                    </div>
+                </div>
+                <div id='v5' style="display: none" class="row training">
+                    <div class="col training__left">
+                        <img id='v5i' class="training__image" src="" alt="">
+                        <a href="#openModal" class="btn btn--small">Записаться</a>
+                    </div>
+                    <div class="col training__right">
+                        <div class="plain-text">
+                            <p id='v5t'></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="training__bg" src="/assets/img/learn-girl.png" alt="">
+        </section>
 
     </main>
 
@@ -141,6 +195,34 @@
     </footer>
     </div>
 
+    <div id="openModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Записаться</h3>
+                    <a href="#close" title="Close" class="close">×</a>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="username"><strong>Ваше имя:</strong></label>
+                        <br>
+                        <input id="username" style="width: 100%" name="username" type="text" />
+                        <br>
+                        <br>
+                        <label for="userphone"><strong>Ваш телефон:</strong></label>
+                        <br>
+                        <input id="userphone" style="width: 100%" name="userphone" type="tel" />
+                        <br>
+                        <br>
+                        <div style="text-align: center">
+                            <a href="#" onclick="validateVacancies();" class="btn btn--small">Отправить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="/assets/libs/jquery/dist/jquery.js"></script>
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/send.js"></script>
@@ -150,6 +232,48 @@
     <script src="/assets/libs/object-fit-images/dist/ofi.browser.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://matthewelsom.com/assets/js/libs/instafeed.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+    <script>
+        var config = {
+                apiKey: "AIzaSyDvMN4p9fOXIIcaC1oOO-x6H8NjsfOtlXg",
+                authDomain: "toniguy-d45f6.firebaseapp.com",
+                databaseURL: "https://toniguy-d45f6.firebaseio.com",
+                projectId: "toniguy-d45f6",
+                storageBucket: "toniguy-d45f6.appspot.com",
+                messagingSenderId: "442395912228"
+            };
+        firebase.initializeApp(config);
+
+        function getTrainData(){
+            var db = firebase.firestore();
+            db.collection("vacancies")
+                .get()
+                .then(function(querySnapshot) {
+                    querySnapshot.forEach(function(doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        if(doc.data().text != ''){
+                            var imgById = document.getElementById(doc.id + 'i');
+                            if(imgById != undefined){
+                                imgById.setAttribute('src', doc.data().image);
+                            }
+                            var txtById = document.getElementById(doc.id + 't');
+                            if(txtById != undefined){
+                                txtById.innerText = doc.data().text;
+                            }
+                            document.getElementById(doc.id).setAttribute('style', '');
+                        }
+                    });
+                })
+                .catch(function(error) {
+                    alert("Error getting documents");
+                });
+        }
+
+        getTrainData();
+    </script>
     <script type="text/javascript" src="https://w69967.yclients.com/widgetJS" charset="UTF-8"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./sendmail.js"></script>
 </body>
 </html>

@@ -33,7 +33,7 @@ function validateVacancies(){
         SecureToken : "c0ddc224-b6eb-4f7a-b8d9-93336a9126a8",
         To : 'hello@toniandguy.kz',
         From : "request@astana.toniandguy.kz",
-        Subject : "Заявка на вакансию с сайта astana.toniandguy.kz",
+        Subject : "Отклик на вакансию с сайта astana.toniandguy.kz",
         Body : "<b>Имя: </b>" + name + "<br/> <b>Номер телефона: </b>" + phone
     }).then(
       message => alert(message)

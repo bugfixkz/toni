@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="/assets/libs/fancybox/dist/jquery.fancybox.min.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="/assets/libs/slick-carousel/slick/slick.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/assets/css/adminloader.css" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="http://localhost:9876/assets/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://localhost:9876/assets/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://localhost:9876/assets/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://localhost:9876/assets/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://localhost:9876/assets/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://localhost:9876/assets/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://localhost:9876/assets/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://localhost:9876/assets/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:9876/assets/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="http://localhost:9876/assets/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:9876/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:9876/assets/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:9876/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="http://localhost:9876/assets/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="http://localhost:9876/assets/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="title" content="Заголовок">
+    <meta name="description" content="Описание">
+    <meta name="keywords" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Заголовок">
+    <meta property="og:description" content="Описание">
+    <meta property="og:url" content="http://localhost:9876/">
+    <meta property="og:image" content="http://localhost:9876/assets/og-image.jpg">
+    <meta property="og:site_name" content="localhost:9876">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Заголовок">
+    <meta property="twitter:description" content="Описание">
+    <meta property="twitter:image" content="http://localhost:9876/assets/og-image.jpg">
+    <meta property="twitter:site" content="">
+    <meta property="twitter:creator" content="">
+    <meta property="twitter:url" content="http://localhost:9876/">
+    <meta property="author" content="">
+    <meta name="relap-image" content="http://localhost:9876/assets/og-image.jpg">
+    <meta name="relap-title" content="Заголовок">
+    <meta name="relap-description" content=" ">
+</head>
+<body>
+        <div id='loader' class="loading" style="display: none">Loading&#8230;</div>
+
+<div class="main">
+        <header class="compensate-for-scrollbar">
+                <div class="container">
+                    <div class="row">
+                        <a href="/" class="logo" title="Главная">
+                            <img src="/assets/img/logo.png" alt="">
+                            <img src="/assets/img/logo-white.png" alt="">
+                        </a>
+                        <nav>
+                            <a href="/admin-price.html" title="Услуги и цены">Админ Услуги и цены</a>
+                            <a href="/admin-training.html" title="Обучение">Админ Обучение</a>
+                            <a href='/admin-vacancies.html' title="Вакансии" >Админ Вакансии</a>
+                            <a href='/admin-events.html' title="События" >Админ События</a>
+                        </nav>
+                        <a class="tel" href="tel:+7 (7172) 72-92-92">+7 (7172) 72-92-92</a>
+                    </div>
+                </div>
+            </header>
+
+    <main>
+
+<section class="training" data-aos="fade-up" data-aos-delay="50">
+    <div class="container">
+        <ul class="breadcrumbs">
+            <li><a href="#" title="Главная">Главная</a></li>
+            <li><span>События</span></li>
+        </ul>
+        <h1 class="title-primary">События</h1>
+        <div class="row">
+            <div class="col training__left">
+                <input id="e1d" type="date" />
+            </div>
+            <div class="col training__right">
+                <div class="plain-text">
+                    <textarea id="e1t" cols='100' rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col training__left">
+                <input id="e2d" type="date" />
+            </div>
+            <div class="col training__right">
+                <div class="plain-text">
+                    <textarea id="e2t" cols='100' rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col training__left">
+                <input id="e3d" type="date" />
+            </div>
+            <div class="col training__right">
+                <div class="plain-text">
+                    <textarea id="e3t" cols='100' rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col training__left">
+                <input id="e4d" type="date" />
+            </div>
+            <div class="col training__right">
+                <div class="plain-text">
+                    <textarea id="e4t" cols='100' rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col training__left">
+                <input id="e5d" type="date" />
+            </div>
+            <div class="col training__right">
+                <div class="plain-text">
+                    <textarea id="e5t" cols='100' rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+    <a href="#" onclick="updateData();" title="Сохранить" class="btn btn--small">Сохранить</a>
+    </div>
+</section>
+
+    </main>
+    </div>
+
+    <script src="/assets/libs/jquery/dist/jquery.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    <script src="/assets/js/send.js"></script>
+    <script src="/assets/libs/maskedinput/maskedinput.js"></script>
+    <script src="/assets/libs/fancybox/dist/jquery.fancybox.min.js"></script>
+    <script src="/assets/libs/slick-carousel/slick/slick.js"></script>
+    <script src="/assets/libs/object-fit-images/dist/ofi.browser.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://matthewelsom.com/assets/js/libs/instafeed.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script>
+        var items = document.querySelectorAll('.file-select');
+        var items2 = document.querySelectorAll('.file-submit');
+        items.forEach(element => {
+            element.addEventListener('change', handleFileUploadChange);
+        });
+        items2.forEach(element => {
+            element.addEventListener('click', handleFileUploadSubmit);
+        });
+        let selectedFile;
+        var config = {
+            apiKey: "AIzaSyBKKyDJOQ7H0EhV37SIxedQFViy2umECdA",
+            authDomain: "tonyguy-cf069.firebaseapp.com",
+            databaseURL: "https://tonyguy-cf069.firebaseio.com",
+            projectId: "tonyguy-cf069",
+            storageBucket: "tonyguy-cf069.appspot.com",
+            messagingSenderId: "770261759588"
+        };
+        firebase.initializeApp(config);
+
+        function getTrainData(){
+            var db = firebase.firestore();
+            db.collection("events")
+                .get()
+                .then(function(querySnapshot) {
+                    querySnapshot.forEach(function(doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        var dateById = document.getElementById(doc.id + 'd');
+                        if(dateById != undefined){
+                            var date = doc.data().date.toDate();
+                            var year = date.getFullYear();
+                            var day = date.getDate();
+                            var month = date.getMonth();
+                            dateById.valueAsDate = new Date(year, month, day + 1);
+                        }
+                        var txtById = document.getElementById(doc.id + 't');
+                        if(txtById != undefined){
+                            txtById.innerText = doc.data().text;
+                        }
+                    });
+                })
+                .catch(function(error) {
+                    alert("Error getting documents");
+                });
+        }
+
+        getTrainData();
+
+
+        function updateData(){
+            var password = prompt("Введите пароль", "");
+            if(password === null || password === ''){
+                return;
+            }
+            signIn('qoqysmail@gmail.com', password);
+        }
+
+        function signIn(email, password){
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then(function(){
+                    updateDateFB();
+                })
+                .catch(function(err){
+                    alert("Error password");
+                })
+        }
+
+        function updateDateFB(){
+            document.getElementById('loader').setAttribute('style', '');
+            var db = firebase.firestore();
+                db.collection("events")
+                    .get()
+                    .then(function(querySnapshot) {
+                        querySnapshot.forEach(function(doc) {
+                            // doc.data() is never undefined for query doc snapshots
+                            var dateById = document.getElementById(doc.id + 'd');
+                            if(dateById != undefined){
+                                db.collection('events').doc(doc.id).update({date: new Date(dateById.value)});
+                            }
+                            var txtById = document.getElementById(doc.id + 't');
+                            if(txtById != undefined){
+                                db.collection('events').doc(doc.id).update({text: txtById.value});
+                            }
+                        });
+                        document.getElementById('loader').setAttribute('style', 'display: none');
+                        alert('Данные обновлены');
+                    })
+                    .catch(function(error) {
+                        alert("Error getting documents");
+                    });
+        }
+    </script>
+</body>
+</html>

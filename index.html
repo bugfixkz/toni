@@ -279,16 +279,8 @@
 </section>
 
 <section data-aos="fade-up" class="events">
-    <div class="container">
+    <div id='eventContainer' class="container">
         <h2 class="title-primary">Наши события</h2>
-        <div class="event">
-            <div class="event__date">20 декабря 2018</div>
-            <div class="event__description">Культовый образ, на первый взгляд, неизменяем. Эстетика, так или иначе,
-                начинает маньеризм. Героический миф выстраивает романтизм, именно об этом комплексе движущих сил писал
-                З.Фрейд в теории сублимации. Хтонический миф, следовательно, монотонно образует художественный идеал.
-                Шиллер утверждал: онтологический статус искусства имеет самодостаточный базовый тип личности.
-            </div>
-        </div>
     </div>
 </section>
 
@@ -369,7 +361,33 @@
     <script>
         $(document).ready(function(){
             $("#masterModal").load('masterModal.html');
+            getEventData();
         })
+
+        function addEventHtml(date, text){
+            var html = '<div class="event">';
+            html += '<div class="event__date">' + date.toLocaleDateString('ru') + '</div>';
+            html += '<div class="event__description">' + text + '</div>';
+            html += '</div><br />';
+            document.getElementById('eventContainer').innerHTML += html;
+        }
+
+        function getEventData(){
+            var db = firebase.firestore();
+            db.collection("events")
+                .get()
+                .then(function (querySnapshot) {
+                    querySnapshot.forEach(function (doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        if (doc.data().text != '') {
+                            addEventHtml(doc.data().date.toDate(), doc.data().text);
+                        }
+                    });
+                })
+                .catch(function (error) {
+                    alert("Error getting documents");
+                });
+        }
     </script>
 </body>
 </html>

@@ -29,12 +29,14 @@ function validateTrain(){
 function validateVacancies(){
     var name = document.getElementById('username').value;
     var phone = document.getElementById('userphone').value;
+    var email = document.getElementById('useremail').value;
+    var position = document.getElementById('userposition').value;
     Email.send({
         SecureToken : "c0ddc224-b6eb-4f7a-b8d9-93336a9126a8",
         To : 'hello@toniandguy.kz',
         From : "request@astana.toniandguy.kz",
         Subject : "Отклик на вакансию с сайта astana.toniandguy.kz",
-        Body : "<b>Имя: </b>" + name + "<br/> <b>Номер телефона: </b>" + phone
+        Body : "<b>Имя: </b>" + name + "<br/> <b>Номер телефона: </b>" + phone + "<br/> <b>Email: </b>" + email + "<br/> <b>На позицию: </b>" + position
     }).then(
       message => alert(message)
     );

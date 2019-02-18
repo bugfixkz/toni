@@ -49,6 +49,11 @@
     <meta name="relap-image" content="/assets/img/og-image.jpg">
     <meta name="relap-title" content="TONI&GUY">
     <meta name="relap-description" content=" ">
+    <style>
+        .modal-dialog{
+            transform: translateY(0%);
+        }
+    </style>
 </head>
 <body>
 
@@ -212,6 +217,23 @@
                         <label for="userphone"><strong>Ваш телефон:</strong></label>
                         <br>
                         <input id="userphone" style="width: 100%" name="userphone" type="tel" />
+                        <br>
+                        <br>
+                        <label for='useremail'><strong>Ваш email:</strong></label>
+                        <br>
+                        <input id='useremail' style="width: 100%" name="useremail" type="email" />
+                        <br>
+                        <br>
+                        <label for="userposition"><strong>Позиция:</strong></label>
+                        <br>
+                        <select style="width: 100%" id="userposition" name="userposition">
+                            <option value="Парикмахер">Парикмахер</option>
+                            <option value="Нейл мастер">Нейл мастер</option>
+                            <option value="Косметолог">Косметолог</option>
+                            <option value="Визаж">Визаж</option>
+                            <option value="Администрация">Администрация</option>
+                            <option value="Другое">Другое</option>
+                        </select>
                         <br>
                         <br>
                         <div style="text-align: center">
